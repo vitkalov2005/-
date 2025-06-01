@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Мои заявки | Мой Не Сам</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="scripts.js"></script>
+</head>
+<body>
+  <header class="header">
+    <h1>Мои заявки</h1>
+    <button id="logout-btn" class="btn btn-logout">Выйти</button>
+  </header>
+
+  <main class="container">
+    <section class="requests-list">
+      <h2>История заявок</h2>
+      <ul id="requests-list"></ul>
+    </section>
+
+    <section class="new-request">
+      <h2>Новая заявка</h2>
+      <form id="order-form" class="form">
+        <label for="order-address">Адрес</label>
+        <input id="order-address" type="text" required placeholder="Улица, дом, квартира" />
+
+        <label for="order-phone">Контактный телефон</label>
+        <input id="order-phone" type="tel" required placeholder="+7(XXX)-XXX-XX-XX" pattern="^\+7\(\d{3}\)-\d{3}-\d{2}-\d{2}$" />
+
+        <label for="order-date">Дата и время услуги</label>
+        <input id="order-date" type="datetime-local" required />
+
+        <label for="order-service">Вид услуги</label>
+        <select id="order-service" required>
+          <option value="">Выберите услугу</option>
+          <option value="Общий клининг">Общий клининг</option>
+          <option value="Генеральная уборка">Генеральная уборка</option>
+          <option value="После строительная уборка">После строительная уборка</option>
+          <option value="Химчистка ковров и мебели">Химчистка ковров и мебели</option>
+          <option value="Иная услуга">Иная услуга</option>
+        </select>
+
+        <label for="order-other-desc" class="hidden">Описание иной услуги</label>
+        <textarea id="order-other-desc" rows="3" placeholder="Опишите требуемую услугу" class="hidden"></textarea>
+
+        <label for="order-payment">Тип оплаты</label>
+        <select id="order-payment" required>
+          <option value="Наличные">Наличные</option>
+          <option value="Банковская карта">Банковская карта</option>
+        </select>
+
+        <button type="submit" class="btn">Отправить заявку</button>
+      </form>
+    </section>
+  </main>
+
+</body>
+</html>
